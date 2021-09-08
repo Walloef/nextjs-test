@@ -140,11 +140,14 @@ collections:
         name: "body"
         widget: "markdown"
 
-  - name: "postsx"
-    label: "Postsx"
-    file: "content/meny/index.mdx"
+  - name: "posts"
+    label: "Posts"
+    folder: "content/meny/"
+    extension: "mdx"
     format: "frontmatter"
     create: true
+    slug: "index"
+    identifier_field: slug
     summary: "{{title}}"
     fields:
       - label: "Title"

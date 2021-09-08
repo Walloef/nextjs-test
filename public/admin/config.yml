@@ -140,8 +140,8 @@ collections:
         name: "body"
         widget: "markdown"
 
-  - name: "posts"
-    label: "Posts"
+  - name: "postsx"
+    label: "Postsx"
     folder: "content/meny/"
     extension: "mdx"
     format: "frontmatter"

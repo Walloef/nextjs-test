@@ -164,7 +164,7 @@ collections:
         widget: "markdown"
 
   - name: "konserter"
-    label: "konserter"
+    label: "Konserter"
     folder: "content/konserter/"
     extension: "mdx"
     format: "frontmatter"
@@ -180,14 +180,14 @@ collections:
         fields:
           - label: "Artist"
             name: "artist"
+            widget: "string"
+            hint: "Namn på artist/grupp"
+          - label: "Datum"
+            name: "datum"
             widget: "datetime"
             format: "YYYY-MM-DD"
             dateFormat: "YYYY-MM-DD"
             timeFormat: false
-            hint: "Namn på artist/grupp"
-          - label: "Datum"
-            name: "datum"
-            widget: "string"
             hint: "Datum för spelning"
 
   # - name: "pages"

@@ -140,25 +140,25 @@ collections:
         name: "body"
         widget: "markdown"
 
-  # - name: "postsx"
-  #   label: "Postsx"
-  #   file: "content/meny/index.mdx"
-  #   format: "frontmatter"
-  #   create: true
-  #   summary: "{{title}}"
-  #   fields:
-  #     - label: "Title"
-  #       name: "title"
-  #       widget: "string"
-  #     - label: "Publish Date"
-  #       name: "date"
-  #       widget: "datetime"
-  #       format: "YYYY-MM-DD"
-  #       dateFormat: "YYYY-MM-DD"
-  #       timeFormat: false
-  #     - label: "Body"
-  #       name: "body"
-  #       widget: "markdown"
+  - name: "postsx"
+    label: "Postsx"
+    file: "content/meny/index.mdx"
+    format: "frontmatter"
+    create: true
+    summary: "{{title}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        dateFormat: "YYYY-MM-DD"
+        timeFormat: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
 
   # - name: "pages"
   #   label: "Pages"

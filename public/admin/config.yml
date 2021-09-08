@@ -163,6 +163,33 @@ collections:
         name: "body"
         widget: "markdown"
 
+  - name: "konserter"
+    label: "konserter"
+    folder: "content/konserter/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "index"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - name: tags
+        label: Tags
+        label_singular: "Tag"
+        widget: list
+        fields:
+          - label: "Artist"
+            name: "artist"
+            widget: "datetime"
+            format: "YYYY-MM-DD"
+            dateFormat: "YYYY-MM-DD"
+            timeFormat: false
+            hint: "Namn på artist/grupp"
+          - label: "Datum"
+            name: "datum"
+            widget: "string"
+            hint: "Datum för spelning"
+
   # - name: "pages"
   #   label: "Pages"
   #   files:

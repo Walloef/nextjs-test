@@ -139,6 +139,7 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
   - name: "postsx"
     label: "Postsx"
     file: "content/posts/index.mdx"
@@ -146,9 +147,6 @@ collections:
     create: true
     summary: "{{title}}"
     fields:
-      - label: "Slug"
-        name: "slug"
-        widget: "string"
       - label: "Title"
         name: "title"
         widget: "string"
@@ -161,6 +159,7 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
   - name: "pages"
     label: "Pages"
     files:

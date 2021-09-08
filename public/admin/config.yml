@@ -142,7 +142,7 @@ collections:
 
   - name: "postsx"
     label: "Postsx"
-    file: "content/posts/index.mdx"
+    file: "content/meny/index.mdx"
     format: "frontmatter"
     create: true
     summary: "{{title}}"

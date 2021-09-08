@@ -139,3 +139,38 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      # - file: "src/pages/meny/index.md"
+      #   label: "Meny"
+      #   name: "meny"
+      #   fields:
+      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "meny-page"}
+      #     - {label: "Title", name: "title", widget: "string"}
+      #     - {label: "Body", name: "body", widget: "markdown"}
+      # - file: "src/pages/lunchmeny/index.md"
+      #   label: "Lunch Meny"
+      #   name: "lunchmeny"
+      #   fields:
+      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "lunchmeny-page"}
+      #     - {label: "Title", name: "title", widget: "string"}
+      #     - {label: "Body", name: "body", widget: "markdown"}
+      # - file: "src/pages/konsert/index.md"
+      #   label: "Konsert"
+      #   name: "konsert"
+      #   fields:
+      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "lunchmeny-page"}
+      #     - {label: "Title", name: "title", widget: "string"}
+      #     - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/meny/index.mdx"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - {
+              label: "Hero Description",
+              name: "hero_description",
+              widget: "markdown",
+            }

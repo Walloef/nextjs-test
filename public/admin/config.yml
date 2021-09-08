@@ -173,9 +173,9 @@ collections:
     identifier_field: slug
     summary: "{{title}}"
     fields:
-      - name: tags
-        label: Tags
-        label_singular: "Tag"
+      - name: konserter
+        label: Konserter
+        label_singular: "Konsert"
         widget: list
         fields:
           - label: "Artist"

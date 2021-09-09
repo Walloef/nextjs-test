@@ -232,15 +232,23 @@ collections:
       - label: "Maträtt"
         name: "maträtt"
         widget: "string"
-        hint: "Namn på maträtt"
-      - label: "Beskrivning"
-        name: "beskrivning"
-        widget: "string"
-        hint: "Beskrivning av maträtt"
-      - label: "Pris"
-        name: "pris"
-        widget: "string"
-        hint: "Pris på maträtt"
+      - name: dishes
+        label: Dishes
+        label_singular: "Dish"
+        widget: list
+        fields:
+          - label: "Maträtt"
+            name: "maträtt"
+            widget: "string"
+            hint: "Namn på maträtt"
+          - label: "Beskrivning"
+            name: "beskrivning"
+            widget: "string"
+            hint: "Beskrivning av maträtt"
+          - label: "Pris"
+            name: "pris"
+            widget: "string"
+            hint: "Pris på maträtt"
 
   # - name: "pages"
   #   label: "Pages"

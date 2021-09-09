@@ -73,5 +73,5 @@ export const getStaticProps = async () => {
   //     src: renderedOutput ? renderedOutput : null,
   //   },
   // };
-  return {};
+  return { props: {} };
 };

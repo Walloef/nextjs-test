@@ -184,6 +184,38 @@ collections:
             timeFormat: false
             hint: "Datum för spelning"
 
+  - name: "meny"
+    label: "meny"
+    folder: "content/meny/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "meny"
+    identifier_field: slug
+    summary: "Menyx"
+    fields:
+      - name: "rubrik"
+        label: "Rubrik"
+        widget: "string"
+        hint: "Meny rubrik"
+      - name: konserter
+        label: Konserter
+        label_singular: "Konsert"
+        widget: list
+        fields:
+          - label: "Maträtt"
+            name: "maträtt"
+            widget: "string"
+            hint: "Namn på maträtt"
+          - label: "Beskrivning"
+            name: "beskrivning"
+            widget: "string"
+            hint: "Beskrivning av maträtt"
+          - label: "Pris"
+            name: "pris"
+            widget: "string"
+            hint: "Pris på maträtt"
+
   # - name: "pages"
   #   label: "Pages"
   #   files:

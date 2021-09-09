@@ -19,15 +19,16 @@ export default function Index({ konserter }: Props) {
   return (
     <Layout>
       <h1>Konserter</h1>
-      {konserter.map((konsert, index) => {
-        console.log(konsert);
-        return (
-          <div key={index}>
-            <p>{konsert.artist}</p>
-            <p>{konsert.datum}</p>
-          </div>
-        );
-      })}
+      {Array.isArray(konserter) &&
+        konserter.map((konsert, index) => {
+          console.log(konsert);
+          return (
+            <div key={index}>
+              <p>{konsert.artist}</p>
+              <p>{konsert.datum}</p>
+            </div>
+          );
+        })}
 
       {/* <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: src }} /> */}

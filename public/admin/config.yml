@@ -191,7 +191,7 @@ collections:
     format: "frontmatter"
     create: true
     slug: "{{rubrik}}"
-    identifier_field: slug
+    identifier_field: rubrik
     summary: "{{rubrik}}"
     fields:
       - name: "rubrik"

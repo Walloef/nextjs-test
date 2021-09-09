@@ -241,9 +241,16 @@ collections:
         widget: list
         summary: "{{fields.dish}}"
         field:
-          label: Dish
-          name: dish
-          widget: "string"
+          - label: Dish
+            name: dish
+            widget: "string"
+          - label: "Dish description"
+            name: dishDescription
+            widget: "string"
+            required: false
+          - label: Price
+            name: price
+            widget: "string"
       - label: "Efter"
         name: "efter"
         widget: "string"

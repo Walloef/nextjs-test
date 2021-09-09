@@ -6,11 +6,12 @@ import path from "path";
 
 import renderToString from "next-mdx-remote/render-to-string";
 
-export default function Index({ title, src }) {
+export default function Index() {
   return (
     <Layout>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: src }} />
+      <p>meny</p>
+      {/* <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: src }} /> */}
       <style jsx>{`
         .container {
           display: flex;
@@ -53,23 +54,24 @@ export default function Index({ title, src }) {
 }
 
 export const getStaticProps = async () => {
-  const postsDirectory = path.join(process.cwd(), "content/meny");
-  const fullPath = path.join(postsDirectory, "index.mdx");
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { content, data } = matter(fileContents, {
-    engines: {
-      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
-    },
-  });
+  // const postsDirectory = path.join(process.cwd(), "content/meny");
+  // const fullPath = path.join(postsDirectory, "index.mdx");
+  // const fileContents = fs.readFileSync(fullPath, "utf8");
+  // const { content, data } = matter(fileContents, {
+  //   engines: {
+  //     yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+  //   },
+  // });
 
-  const { renderedOutput, scope } = await renderToString(content, {
-    scope: data,
-  });
+  // const { renderedOutput, scope } = await renderToString(content, {
+  //   scope: data,
+  // });
 
-  return {
-    props: {
-      title: scope?.title ? scope.title : null,
-      src: renderedOutput ? renderedOutput : null,
-    },
-  };
+  // return {
+  //   props: {
+  //     title: scope?.title ? scope.title : null,
+  //     src: renderedOutput ? renderedOutput : null,
+  //   },
+  // };
+  return {};
 };

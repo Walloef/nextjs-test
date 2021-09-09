@@ -235,6 +235,7 @@ collections:
       - label: "Innan"
         name: "innan"
         widget: "string"
+        required: false
       - label: Dishes
         label_singular: "Dish"
         name: "dishes"
@@ -254,6 +255,7 @@ collections:
       - label: "Efter"
         name: "efter"
         widget: "string"
+        required: false
 
   # - name: "exp"
   #   label: "exp"

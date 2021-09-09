@@ -190,9 +190,9 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     create: true
-    slug: "menyx"
+    slug: "{{rubrik}}"
     identifier_field: slug
-    summary: "Menyx"
+    summary: "{{rubrik}}"
     fields:
       - name: "rubrik"
         label: "Rubrik"

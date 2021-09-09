@@ -68,8 +68,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      title: scope.title,
-      src: renderedOutput,
+      title: scope?.title ? scope.title : null,
+      src: renderedOutput ? renderedOutput : null,
     },
   };
 };

@@ -216,6 +216,32 @@ collections:
             widget: "string"
             hint: "Pris på maträtt"
 
+  - name: "exp"
+    label: "exp"
+    folder: "content/meny/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+      - label: "Maträtt"
+        name: "maträtt"
+        widget: "string"
+        hint: "Namn på maträtt"
+      - label: "Beskrivning"
+        name: "beskrivning"
+        widget: "string"
+        hint: "Beskrivning av maträtt"
+      - label: "Pris"
+        name: "pris"
+        widget: "string"
+        hint: "Pris på maträtt"
+
   # - name: "pages"
   #   label: "Pages"
   #   files:

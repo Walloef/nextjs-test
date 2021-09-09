@@ -184,13 +184,13 @@ collections:
             timeFormat: false
             hint: "Datum för spelning"
 
-  - name: "meny"
-    label: "meny"
+  - name: "menyx"
+    label: "menyx"
     folder: "content/meny/"
     extension: "mdx"
     format: "frontmatter"
     create: true
-    slug: "meny"
+    slug: "menyx"
     identifier_field: slug
     summary: "Menyx"
     fields:

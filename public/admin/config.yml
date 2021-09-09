@@ -240,7 +240,7 @@ collections:
         name: "dishes"
         widget: list
         summary: "{{fields.dish}}"
-        field:
+        fields:
           - label: Dish
             name: dish
             widget: "string"

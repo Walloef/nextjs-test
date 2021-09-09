@@ -216,39 +216,71 @@ collections:
             widget: "string"
             hint: "Pris på maträtt"
 
-  - name: "exp"
-    label: "exp"
-    folder: "content/meny/"
+  - name: "xx"
+    label: "Xx"
+    folder: "content/xx/"
     extension: "mdx"
     format: "frontmatter"
     create: true
     slug: "{{slug}}"
     identifier_field: slug
-    summary: "{{title}}"
+    summary: "{{rubrik}}"
     fields:
       - label: "Slug"
         name: "slug"
         widget: "string"
-      - label: "Maträtt"
-        name: "maträtt"
+      - label: "Rubrik"
+        name: "rubrik"
         widget: "string"
-      - name: dishes
-        label: Dishes
+      - label: "Innan"
+        name: "innan"
+        widget: "string"
+      - label: Dishes
         label_singular: "Dish"
+        name: "dishes"
         widget: list
-        fields:
-          - label: "Maträtt"
-            name: "maträtt"
-            widget: "string"
-            hint: "Namn på maträtt"
-          - label: "Beskrivning"
-            name: "beskrivning"
-            widget: "string"
-            hint: "Beskrivning av maträtt"
-          - label: "Pris"
-            name: "pris"
-            widget: "string"
-            hint: "Pris på maträtt"
+        summary: "{{fields.dish}}"
+        field:
+          label: Dish
+          name: dish
+          widget: "string"
+      - label: "Efter"
+        name: "efter"
+        widget: "string"
+
+  # - name: "exp"
+  #   label: "exp"
+  #   folder: "content/meny/"
+  #   extension: "mdx"
+  #   format: "frontmatter"
+  #   create: true
+  #   slug: "{{slug}}"
+  #   identifier_field: slug
+  #   summary: "{{title}}"
+  #   fields:
+  #     - label: "Slug"
+  #       name: "slug"
+  #       widget: "string"
+  #     - label: "Maträtt"
+  #       name: "maträtt"
+  #       widget: "string"
+  #     - name: dishes
+  #       label: Dishes
+  #       label_singular: "Dish"
+  #       widget: list
+  #       fields:
+  #         - label: "Maträtt"
+  #           name: "maträtt"
+  #           widget: "string"
+  #           hint: "Namn på maträtt"
+  #         - label: "Beskrivning"
+  #           name: "beskrivning"
+  #           widget: "string"
+  #           hint: "Beskrivning av maträtt"
+  #         - label: "Pris"
+  #           name: "pris"
+  #           widget: "string"
+  #           hint: "Pris på maträtt"
 
   # - name: "pages"
   #   label: "Pages"

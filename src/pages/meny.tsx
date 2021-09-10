@@ -4,14 +4,42 @@ import matter from "gray-matter";
 import yaml from "js-yaml";
 import path from "path";
 
-import renderToString from "next-mdx-remote/render-to-string";
+type Menu = {
+  dish: string;
+  dishDescription?: string;
+  price: string;
+};
 
-export default function Index() {
+type Props = {
+  menu: {
+    dishes: Menu[];
+    rubrik: string;
+    slug: string;
+  }[];
+};
+
+export default function Index({ menu }: Props) {
   return (
     <Layout>
-      <p>meny</p>
-      {/* <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: src }} /> */}
+      <h1>meny</h1>
+      {menu.map((m) => {
+        return m.rubrik && m.dishes && m.dishes.length > 0 ? (
+          <div key={m.slug}>
+            <h2>{m.rubrik}</h2>
+            <ul>
+              {m.dishes.map((dish, index) => (
+                <li key={index}>
+                  <div>
+                    <b>{dish.dish}</b>
+                    {dish.dishDescription && <p>{dish.dishDescription}</p>}
+                    <p>{dish.price}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null;
+      })}
       <style jsx>{`
         .container {
           display: flex;
@@ -53,25 +81,27 @@ export default function Index() {
   );
 }
 
+const getYamalAsJson = (path) => {
+  return matter(fs.readFileSync(path, "utf8"), {
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
+  });
+};
+
 export const getStaticProps = async () => {
-  // const postsDirectory = path.join(process.cwd(), "content/meny");
-  // const fullPath = path.join(postsDirectory, "index.mdx");
-  // const fileContents = fs.readFileSync(fullPath, "utf8");
-  // const { content, data } = matter(fileContents, {
-  //   engines: {
-  //     yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
-  //   },
-  // });
+  const postsDirectory = path.join(process.cwd(), "content/meny");
+  const menyPages = ["predrink", "starters", "mains", "desserts"];
+  const content = {};
+  const menu = menyPages.map((page) => {
+    const uri = path.join(postsDirectory, `${page}.mdx`);
+    const { data } = getYamalAsJson(uri);
+    return (content[page] = data);
+  });
 
-  // const { renderedOutput, scope } = await renderToString(content, {
-  //   scope: data,
-  // });
-
-  // return {
-  //   props: {
-  //     title: scope?.title ? scope.title : null,
-  //     src: renderedOutput ? renderedOutput : null,
-  //   },
-  // };
-  return { props: {} };
+  return {
+    props: {
+      menu,
+    },
+  };
 };

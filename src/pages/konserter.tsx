@@ -29,9 +29,6 @@ export default function Index({ konserter }: Props) {
             </div>
           );
         })}
-
-      {/* <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: src }} /> */}
       <style jsx>{`
         .container {
           display: flex;

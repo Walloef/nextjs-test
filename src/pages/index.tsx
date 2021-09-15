@@ -1,50 +1,51 @@
-import Layout from "../components/Layout";
+import Image from 'next/image';
+import Layout from '../components/Layout';
 
 export default function Index() {
   return (
     <Layout>
+      <div className="image-wrapper">
+        <img
+          className="header"
+          src="/images/hero.jpg"
+          alt="Instrument på ett bord i resturangen"
+        />
+        <div className="slogan">
+          <h1>Glenn Miller Café</h1>
+          <p>Stockholms största och minsta jazzclub</p>
+        </div>
+      </div>
       <div className="container">
         <div>
-          <h1>Start</h1>
           <span className="handle">@nextjs-netlify-blog</span>
           <h2>A blog template with Next.js and Netlify.</h2>
         </div>
       </div>
       <style jsx>{`
+        .image-wrapper {
+          position: relative;
+          width: 80%;
+          top: -88px;
+        }
+        .slogan {
+          position: absolute;
+          bottom: 0;
+          right: -83px;
+          padding: 30px 30px 8px;
+          background: var(--gmc-brand);
+          text-align: center;
+        }
+
+        .header {
+          width: 100%;
+          display: block;
+        }
         .container {
           display: flex;
           align-items: center;
           justify-content: center;
           flex: 1 1 auto;
           padding: 0 1.5rem;
-        }
-        h1 {
-          font-size: 2.5rem;
-          margin: 0;
-          font-weight: 500;
-        }
-        h2 {
-          font-size: 1.75rem;
-          font-weight: 400;
-          line-height: 1.25;
-        }
-        .fancy {
-          color: #15847d;
-        }
-        .handle {
-          display: inline-block;
-          margin-top: 0.275em;
-          color: #9b9b9b;
-          letter-spacing: 0.05em;
-        }
-
-        @media (min-width: 769px) {
-          h1 {
-            font-size: 3rem;
-          }
-          h2 {
-            font-size: 2.25rem;
-          }
         }
       `}</style>
     </Layout>

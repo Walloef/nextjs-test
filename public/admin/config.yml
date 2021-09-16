@@ -16,13 +16,13 @@ collections:
     identifier_field: slug
     summary: "start"
     fields:
-      - label: "öppettider"
-        name: "openings"
-        widget: "string"
+      - label: "snabb info 1"
+        name: "snabb_info_one"
+        widget: "markdown"
         required: false
-      - label: "stängt"
-        name: "closed"
-        widget: "string"
+      - label: "snabb info 2"
+        name: "snabb_info_two"
+        widget: "markdown"
         required: false
       - label: "info"
         name: "info"

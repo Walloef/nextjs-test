@@ -22,7 +22,11 @@ export default function Index() {
               <h3>Bordsbokning</h3>
               <p className="booking-wrapper">
                 <b>
-                  <a href="#bookTable" className="book-table">
+                  <a
+                    target="_blank"
+                    href="https://www.thefork.se/restaurang/glenn-miller-cafe-r596453/meny#bat_dmn_redirect"
+                    className="book-table"
+                  >
                     Online
                   </a>
                 </b>
@@ -38,7 +42,7 @@ export default function Index() {
                 Onsdag - söndag kl 18.00- 22.30 med livejazzkonsert kl 19.30
               </p>
               <p>
-                Konserterna livestreamas på vår
+                Konserterna livestreamas på vår{" "}
                 <a className="fb" href="https://facebook.com/glennmillercafe/">
                   Facebooksida
                 </a>
@@ -48,42 +52,44 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="iframe__wrapper" id="bookTable">
-          <p className="iframe__title">
-            OBS! Först när du/ni fått en bekräftelse och en bokningsreferens
-            gäller din/er bokning!
-          </p>
-          <p>
-            Får du inte en bekräftelse, så titta i skräpposten. Den kan ha
-            hamnat där.
-          </p>
-          <div style={{ margin: "10px 0px 25px" }}>
-            <b>VIKTIGT</b>
-            <ul style={{ listStyle: "disc", padding: "0px 23px" }}>
-              <li>
-                Bokade platser = middagsbokning för SAMTLIGA bokade gäster.
-                (Minst huvudrätt)
-              </li>
-              <li>
-                Om antalet gäster i din bokning ändras: skicka sms till
-                0768824549 och meddela.
-              </li>
-              <li>
-                Enl Coronarestriktionerna måste alla gäster sitta. Vi har
-                plockat bort bord och har färre platser än tidigare för att
-                kunna hålla avstånd mellan sällskapen. Vi ändrar kontinuerligt
-                för att för att följa folkhälsomyndughetens restriktioner och
-                rekommendationer för att stoppa smittspridningen.
-              </li>
-            </ul>
-          </div>
-          <div className="iframe-image">
+        <div style={{ padding: 24 }}>
+          <div className="iframe__wrapper" id="bookTable">
+            <p className="iframe__title">
+              OBS! Först när du/ni fått en bekräftelse och en bokningsreferens
+              gäller din/er bokning!
+            </p>
+            <p>
+              Får du inte en bekräftelse, så titta i skräpposten. Den kan ha
+              hamnat där.
+            </p>
+            <div style={{ margin: "10px 0px 25px" }}>
+              <b>VIKTIGT</b>
+              <ul style={{ listStyle: "disc", padding: "0px 23px" }}>
+                <li>
+                  Bokade platser = middagsbokning för SAMTLIGA bokade gäster.
+                  (Minst huvudrätt)
+                </li>
+                <li>
+                  Om antalet gäster i din bokning ändras: skicka sms till
+                  0768824549 och meddela.
+                </li>
+                <li>
+                  Enl Coronarestriktionerna måste alla gäster sitta. Vi har
+                  plockat bort bord och har färre platser än tidigare för att
+                  kunna hålla avstånd mellan sällskapen. Vi ändrar kontinuerligt
+                  för att för att följa folkhälsomyndughetens restriktioner och
+                  rekommendationer för att stoppa smittspridningen.
+                </li>
+              </ul>
+            </div>
+            {/* <div className="iframe-image">
             <iframe
               src="~/src/assets/iframe.html"
               title="book a table"
               style={{ height: 369, width: 320 }}
             ></iframe>
             <img src="/images/ingresstext.jpg" alt="restaurant empty" />
+          </div> */}
           </div>
         </div>
         <div className="gm-text">
@@ -174,7 +180,7 @@ export default function Index() {
             flex-wrap: wrap;
             width: 800px;
             margin: 50px auto;
-            max-width: calc(100% - 32px);
+            max-width: calc(100% - 24px);
             justify-content: space-between;
             align-items: center;
             background: #232143;
@@ -246,21 +252,50 @@ export default function Index() {
           }
           .image-wrapper {
             position: relative;
-            top: -88px;
+            top: 0px;
+            height: 45vh;
+            margin-bottom: 50px;
+          }
+          @media (max-width: 850px) {
+            .image-wrapper {
+              height: 65vh;
+            }
           }
           img {
             display: block;
           }
           .hero {
+            left: 0;
+            transform: none;
             width: 80%;
+
+            object-fit: cover;
+            height: 94%;
+            position: absolute;
+          }
+          @media (max-width: 850px) {
+            .hero {
+              width: 100%;
+              // height: 94%;
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
           .slogan {
             position: absolute;
             bottom: 0;
             right: 0;
+            width: 70%;
             padding: 30px 30px 8px;
             background: var(--gmc-brand);
             text-align: center;
+          }
+          @media (max-width: 850px) {
+            .slogan {
+              right: auto;
+              left: 50%;
+              transform: translateX(-50%);
+            }
           }
           .container {
             display: flex;
@@ -341,6 +376,7 @@ export default function Index() {
           style={{
             display: "block",
             margin: "0 auto",
+            maxWidth: "100%",
           }}
           alt="map"
           src="https://api.hitta.se/image/v2/0_2x/17?width=980&amp;height=500&amp;zoom.to=location&amp;location=%7B%22id%22%3A%221010178402%22%7D?markers=%7B%22marker%22:1%7D"

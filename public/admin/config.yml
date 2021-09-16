@@ -6,6 +6,45 @@ public_folder: /images
 publish_mode: editorial_workflow
 
 collections:
+  - name: "start"
+    label: "start"
+    folder: "content/start/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "index"
+    identifier_field: slug
+    summary: "start"
+    fields:
+      - label: "öppettider"
+        name: "openings"
+        widget: "string"
+        required: false
+      - label: "stängt"
+        name: "closed"
+        widget: "string"
+        required: false
+      - label: "info"
+        name: "info"
+        widget: "markdown"
+        required: false
+      - label: "sale info"
+        name: "sale"
+        widget: "markdown"
+        required: false
+      - label: "Bra att veta 1"
+        name: "good_to_know_one"
+        widget: "markdown"
+        required: false
+      - label: "Bra att veta 2"
+        name: "good_to_know_two"
+        widget: "markdown"
+        required: false
+      - label: "Bra att veta 3"
+        name: "good_to_know_three"
+        widget: "markdown"
+        required: false
+
   - name: "konserter"
     label: "Konserter"
     folder: "content/konserter/"

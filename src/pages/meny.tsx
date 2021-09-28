@@ -1,9 +1,10 @@
-import Layout from '../components/Layout';
-import fs from 'fs';
-import matter from 'gray-matter';
-import yaml from 'js-yaml';
-import path from 'path';
-import Spacer from '../components/Spacer';
+import Layout from "../components/Layout";
+import fs from "fs";
+import matter from "gray-matter";
+import yaml from "js-yaml";
+import path from "path";
+import Spacer from "../components/Spacer";
+import { Fragment } from "react";
 
 type Menu = {
   dish: string;
@@ -28,8 +29,8 @@ export default function Index({ menu }: Props) {
       <div className="menu-container">
         {menu.map((m, i) => {
           return m.rubrik && m.dishes && m.dishes.length > 0 ? (
-            <>
-              <div key={m.slug} className="menu-items">
+            <Fragment key={m.slug}>
+              <div className="menu-items">
                 <h2>{m.rubrik}</h2>
                 <Spacer />
                 <ul>
@@ -67,7 +68,7 @@ export default function Index({ menu }: Props) {
               )}
 
               <Spacer />
-            </>
+            </Fragment>
           ) : null;
         })}
       </div>
@@ -129,7 +130,7 @@ export default function Index({ menu }: Props) {
 }
 
 const getYamalAsJson = (path) => {
-  return matter(fs.readFileSync(path, 'utf8'), {
+  return matter(fs.readFileSync(path, "utf8"), {
     engines: {
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
     },
@@ -137,8 +138,8 @@ const getYamalAsJson = (path) => {
 };
 
 export const getStaticProps = async () => {
-  const postsDirectory = path.join(process.cwd(), 'content/meny');
-  const menyPages = ['predrink', 'starters', 'mains', 'desserts'];
+  const postsDirectory = path.join(process.cwd(), "content/meny");
+  const menyPages = ["predrink", "starters", "mains", "desserts"];
   const content = {};
   const menu = menyPages.map((page) => {
     const uri = path.join(postsDirectory, `${page}.mdx`);

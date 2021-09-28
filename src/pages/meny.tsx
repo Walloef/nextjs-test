@@ -14,13 +14,16 @@ type Menu = {
 
 type Props = {
   menu: {
+    innan: string;
     dishes: Menu[];
     rubrik: string;
     slug: string;
+    efter: string;
   }[];
 };
 
-export default function Index({ menu }: Props) {
+export default function Index(props: Props) {
+  const { menu } = props;
   return (
     <Layout>
       <Spacer />
@@ -33,6 +36,7 @@ export default function Index({ menu }: Props) {
               <div className="menu-items">
                 <h2>{m.rubrik}</h2>
                 <Spacer />
+                {m.innan && <p className="extra-info">{m.innan}</p>}
                 <ul>
                   {m.dishes.map((dish, index) => (
                     <li key={index}>
@@ -60,6 +64,7 @@ export default function Index({ menu }: Props) {
                   ))}
                 </ul>
               </div>
+              {m.efter && <p className="extra-info">{m.efter}</p>}
               {i + 1 < menu.length && (
                 <>
                   <Spacer />
@@ -87,7 +92,11 @@ export default function Index({ menu }: Props) {
           background: var(--gmc-transparent-color);
           border: none;
         }
-
+        .extra-info {
+          text-align: center;
+          font-style: italic;
+          font-size: 1.1rem;
+        }
         .dish-description {
           margin-top: 20px;
         }

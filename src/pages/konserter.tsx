@@ -4,10 +4,12 @@ import matter from "gray-matter";
 import yaml from "js-yaml";
 import path from "path";
 import Spacer from "../components/Spacer";
+import { Fragment } from "react";
 
 type Konsert = {
   datum: string;
   artist: string;
+  Text_before_specific_concert?: string;
 };
 
 type Props = {
@@ -35,12 +37,19 @@ export default function Index(props: Props) {
           {Array.isArray(konserter) &&
             konserter.map((konsert, index) => {
               return (
-                <div className="konsert" key={index}>
-                  <div className="konsert-container">
-                    <p className="artist">{konsert.artist}</p>
-                    <p className="date">{konsert.datum}</p>
+                <Fragment key={index}>
+                  {konsert.Text_before_specific_concert && (
+                    <div className="before-konsert">
+                      <p>{konsert.Text_before_specific_concert}</p>
+                    </div>
+                  )}
+                  <div className="konsert" key={index}>
+                    <div className="konsert-container">
+                      <p className="artist">{konsert.artist}</p>
+                      <p className="date">{konsert.datum}</p>
+                    </div>
                   </div>
-                </div>
+                </Fragment>
               );
             })}
         </div>
@@ -73,6 +82,15 @@ export default function Index(props: Props) {
           background: var(--gmc-brand-light);
           box-shadow: var(--shadow);
         }
+
+        .before-konsert {
+          padding: 80px 12px 0px 12px;
+          border-bottom: 1px solid var(--gmc-transparent-color);
+          font-style: italic;
+          font-size: 1.1rem;
+          letter-spacing: 0.4px;
+        }
+
         .artist {
           flex-grow: 1;
         }

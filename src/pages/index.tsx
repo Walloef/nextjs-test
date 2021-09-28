@@ -201,6 +201,7 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
             position: relative;
             top: 0px;
             height: 45vh;
+            min-height: 640px;
             margin-bottom: 50px;
           }
           @media (max-width: 850px) {

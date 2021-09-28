@@ -1,7 +1,11 @@
-import Image from "next/image";
+import fs from "fs";
+import matter from "gray-matter";
+import yaml from "js-yaml";
+import path from "path";
+import marked from "marked";
 import Layout from "../components/Layout";
 
-export default function Index() {
+export default function Index({ frontMatter }: { [key: string]: any }) {
   return (
     <>
       <Layout>
@@ -16,96 +20,40 @@ export default function Index() {
             <p>Stockholms största och minsta jazzclub</p>
           </div>
         </div>
+        <div className="container"></div>
         <div className="container">
           <div className="quick-info">
             <div className="quick-info-wrapper">
-              <h3>Bordsbokning</h3>
-              <p className="booking-wrapper">
-                <b>
-                  <a
-                    target="_blank"
-                    href="https://www.thefork.se/restaurang/glenn-miller-cafe-r596453/meny#bat_dmn_redirect"
-                    className="book-table"
-                  >
-                    Online
-                  </a>
-                </b>
-              </p>
-              <h3>Adress</h3>
-              <p>Brunnsgatan 21A 11138 Stockholm</p>
-              <p>076-882 45 49</p>
-              <p className="small">T-bana Hötorget eller Östermalmstorg</p>
+              <div
+                className="mds"
+                dangerouslySetInnerHTML={{
+                  __html: marked(frontMatter.snabb_info_one),
+                }}
+              />
             </div>
             <div className="quick-info-wrapper">
-              <h3>Tillfälliga Öppettider:</h3>
-              <p>
-                Onsdag - söndag kl 18.00- 22.30 med livejazzkonsert kl 19.30
-              </p>
-              <p>
-                Konserterna livestreamas på vår{" "}
-                <a className="fb" href="https://facebook.com/glennmillercafe/">
-                  Facebooksida
-                </a>
-                .
-              </p>
-              <p className="small">Stängt måndag - tisdag</p>
+              <div
+                className="mds"
+                dangerouslySetInnerHTML={{
+                  __html: marked(frontMatter.snabb_info_two),
+                }}
+              />
             </div>
           </div>
         </div>
         <div style={{ padding: 24 }}>
           <div className="iframe__wrapper" id="bookTable">
-            <p className="iframe__title">
-              OBS! Först när du/ni fått en bekräftelse och en bokningsreferens
-              gäller din/er bokning!
-            </p>
-            <p>
-              Får du inte en bekräftelse, så titta i skräpposten. Den kan ha
-              hamnat där.
-            </p>
-            <div style={{ margin: "10px 0px 25px" }}>
-              <b>VIKTIGT</b>
-              <ul style={{ listStyle: "disc", padding: "0px 23px" }}>
-                <li>
-                  Bokade platser = middagsbokning för SAMTLIGA bokade gäster.
-                  (Minst huvudrätt)
-                </li>
-                <li>
-                  Om antalet gäster i din bokning ändras: skicka sms till
-                  0768824549 och meddela.
-                </li>
-                <li>
-                  Enl Coronarestriktionerna måste alla gäster sitta. Vi har
-                  plockat bort bord och har färre platser än tidigare för att
-                  kunna hålla avstånd mellan sällskapen. Vi ändrar kontinuerligt
-                  för att för att följa folkhälsomyndughetens restriktioner och
-                  rekommendationer för att stoppa smittspridningen.
-                </li>
-              </ul>
-            </div>
-            {/* <div className="iframe-image">
-            <iframe
-              src="~/src/assets/iframe.html"
-              title="book a table"
-              style={{ height: 369, width: 320 }}
-            ></iframe>
-            <img src="/images/ingresstext.jpg" alt="restaurant empty" />
-          </div> */}
+            <div
+              className="mds"
+              dangerouslySetInnerHTML={{ __html: marked(frontMatter.info) }}
+            />
           </div>
         </div>
         <div className="gm-text">
-          <p>
-            Glenn Miller Café är både den största och minsta jazzklubben. Vi är
-            stolta och tacksamma att kunna erbjuda dig en hög kvalitet och stor
-            variation jazz och jazzmusiker.
-          </p>
-          <p>
-            Köket är franskt med rätter som Confit de Canard, sju olika
-            variationer of Moules Frites, Creme Brulée mm. Om du vill äta middag
-            är det bra att boka bord. Nu med Coronarestriktioner får vi inte ha
-            gäster stående. Vänligen notera att vi först och främst är en
-            jazzklubb. För att respektera musiken och musikerna ber vi dig att
-            spara dina konversationer till pauserna under spelningarna.
-          </p>
+          <div
+            className="mds"
+            dangerouslySetInnerHTML={{ __html: marked(frontMatter.sale) }}
+          />
           <p className="gm-text" style={{ textAlign: "center" }}>
             Gilla oss på
             <a
@@ -135,29 +83,28 @@ export default function Index() {
               <p className="list-info--heading">Bra att veta</p>
               <ul className="list-info">
                 <li>
-                  <p>Konsertavgiften är minst 150 kr per person och kväll</p>
-                  <p>Konsertavgiften betalas kontant eller Swish</p>
-                  <p>
-                    En del av konserterna livestreamas på vår{" "}
-                    <a
-                      href="https://sv-se.facebook.com/glennmillercafe/"
-                      style={{ color: "white", textDecoration: "underline" }}
-                    >
-                      Facebook
-                    </a>
-                    .
-                  </p>
+                  <div
+                    className="mds"
+                    dangerouslySetInnerHTML={{
+                      __html: marked(frontMatter.good_to_know_one),
+                    }}
+                  />
                 </li>
                 <li>
-                  <p>Bokningar är för middagsgäster</p>
-                  <p>Middagsgäster har bordet hela kvällen</p>
-                  <p>
-                    För sällskap större än 8 personer, vänligen kontakta
-                    restaurangen för att göra din bokning. 076-882 45 49
-                  </p>
+                  <div
+                    className="mds"
+                    dangerouslySetInnerHTML={{
+                      __html: marked(frontMatter.good_to_know_two),
+                    }}
+                  />
                 </li>
                 <li>
-                  <p>Parkeringshus finns mitt emot Glenn Miller Café</p>
+                  <div
+                    className="mds"
+                    dangerouslySetInnerHTML={{
+                      __html: marked(frontMatter.good_to_know_three),
+                    }}
+                  />
                 </li>
               </ul>
               <p style={{ textAlign: "center" }}>
@@ -385,3 +332,16 @@ export default function Index() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const postsDirectory = path.join(process.cwd(), "content/start");
+  const fullPath = path.join(postsDirectory, "index.mdx");
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data } = matter(fileContents, {
+    engines: {
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object,
+    },
+  });
+
+  return { props: { frontMatter: data } };
+};

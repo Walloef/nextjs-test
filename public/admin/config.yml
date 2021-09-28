@@ -64,6 +64,10 @@ collections:
         label_singular: "Konsert"
         widget: list
         fields:
+          - label: "Text innan specifik konsert"
+            name: "Text_before_specific_concert"
+            widget: "string"
+            required: false
           - label: "Artist"
             name: "artist"
             widget: "string"

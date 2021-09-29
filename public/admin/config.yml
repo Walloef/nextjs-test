@@ -63,6 +63,47 @@ collections:
         label: Konserter
         label_singular: "Konsert"
         widget: list
+        summary: "{{fields.artist}}"
+        fields:
+          - label: "Text innan specifik konsert"
+            name: "Text_before_specific_concert"
+            widget: "string"
+            required: false
+          - label: "Artist"
+            name: "artist"
+            widget: "string"
+            hint: "Namn på artist/grupp"
+          - label: "Datum"
+            name: "datum"
+            widget: "datetime"
+            format: "YYYY-MM-DD"
+            dateFormat: "YYYY-MM-DD"
+            timeFormat: false
+            hint: "Datum för spelning"
+      - label: "Efter"
+        name: "efter"
+        widget: "string"
+        required: false
+
+  - name: "klassiska-konserter"
+    label: "Klassiska konserter"
+    folder: "content/klassiska-konserter/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "index"
+    identifier_field: slug
+    summary: "klassiska konserter"
+    fields:
+      - label: "Innan"
+        name: "innan"
+        widget: "string"
+        required: false
+      - name: konserter
+        label: Konserter
+        label_singular: "Klassisk Konsert"
+        widget: list
+        summary: "{{fields.artist}}"
         fields:
           - label: "Text innan specifik konsert"
             name: "Text_before_specific_concert"

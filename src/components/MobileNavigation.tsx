@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function MobileNavigation() {
   const { pathname } = useRouter();
@@ -40,15 +40,24 @@ export default function MobileNavigation() {
       <ul>
         <li>
           <Link href="/meny">
-            <a className={pathname.startsWith('/meny') ? 'active' : null}>
+            <a className={pathname.startsWith("/meny") ? "active" : null}>
               <span>Meny</span>
             </a>
           </Link>
         </li>
         <li>
           <Link href="/konserter">
-            <a className={pathname === '/konserter' ? 'active' : null}>
+            <a className={pathname === "/konserter" ? "active" : null}>
               <span>Konserter</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/klassiska-konserter">
+            <a
+              className={pathname === "/klassiska-konserter" ? "active" : null}
+            >
+              <span>Klassiska konserter</span>
             </a>
           </Link>
         </li>

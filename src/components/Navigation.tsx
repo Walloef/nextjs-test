@@ -1,16 +1,16 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Burger from './Burger';
-import { useState } from 'react';
-import MobileNavigation from './MobileNavigation';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Burger from "./Burger";
+import { useState } from "react";
+import MobileNavigation from "./MobileNavigation";
 
 export default function Navigation() {
-  const router = useRouter();
+  const { pathname } = useRouter();
   const [active, setActive] = useState(false);
   return (
     <>
       {active && <MobileNavigation />}
-      <div className={'container ' + (active ? 'active-container' : '')}>
+      <div className={"container " + (active ? "active-container" : "")}>
         <ul>
           <Burger active={active} onClick={() => setActive(!active)} />
           <li>
@@ -23,19 +23,26 @@ export default function Navigation() {
           <li className="spacer"></li>
           <li className="desktop-menu">
             <Link href="/meny">
-              <a
-                className={
-                  router.pathname.startsWith('/meny') ? 'active' : null
-                }
-              >
+              <a className={pathname.startsWith("/meny") ? "active" : null}>
                 <span>Meny</span>
               </a>
             </Link>
           </li>
           <li className="desktop-menu">
             <Link href="/konserter">
-              <a className={router.pathname === '/konserter' ? 'active' : null}>
+              <a className={pathname === "/konserter" ? "active" : null}>
                 <span>Konserter</span>
+              </a>
+            </Link>
+          </li>
+          <li className="desktop-menu">
+            <Link href="/klassiska-konserter">
+              <a
+                className={
+                  pathname === "/klassiska-konserter" ? "active" : null
+                }
+              >
+                <span>Klassiska konserter</span>
               </a>
             </Link>
           </li>
@@ -62,7 +69,7 @@ export default function Navigation() {
               background: red;
             }
             .name {
-              font-family: 'Marck Script', cursive;
+              font-family: "Marck Script", cursive;
               font-size: 2rem;
               font-weight: bold;
               color: var(--gmc-white);

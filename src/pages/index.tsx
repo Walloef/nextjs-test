@@ -20,7 +20,7 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
             <p>Stockholms största och minsta jazzclub</p>
           </div>
         </div>
-        <div className="container"></div>
+
         <div className="container">
           <div className="quick-info">
             <div className="quick-info-wrapper">
@@ -40,6 +40,14 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
               />
             </div>
           </div>
+        </div>
+        <div className="book-table">
+          <h2>Boka Bord</h2>
+          <iframe
+            src="/iframe/booking.html"
+            title="book a table"
+            style={{ height: 369, width: 320 }}
+          ></iframe>
         </div>
         <div style={{ padding: 24 }}>
           <div className="iframe__wrapper" id="bookTable">
@@ -160,6 +168,12 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
           .quick-info-wrapper {
             width: 360px;
             margin: 24px 12px 0;
+          }
+          .book-table {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none !important;
           }
           .booking-wrapper {
             display: flex;

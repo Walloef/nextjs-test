@@ -41,19 +41,6 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
             </div>
           </div>
         </div>
-        <div className="book-table">
-          <h2>Boka Bord</h2>
-          <div>
-            <iframe
-              src="https://module.lafourchette.com/sv_SE/module/596453-e5ce2"
-              style={{
-                width: "100%",
-                minHeight: 800,
-                border: "none",
-              }}
-            ></iframe>
-          </div>
-        </div>
         <div style={{ padding: 24 }}>
           <div className="iframe__wrapper" id="bookTable">
             <div

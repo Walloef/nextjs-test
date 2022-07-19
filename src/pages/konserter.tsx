@@ -45,7 +45,9 @@ export default function Index(props: Props) {
                   )}
                   <div className="konsert" key={index}>
                     <div className="konsert-container">
-                      <p className="artist">{konsert.artist}</p>
+                      <p className="artist">
+                        {konsert.artist.replace(/[^ -ö]+/g, "")}
+                      </p>
                       <p className="date">{konsert.datum}</p>
                     </div>
                   </div>

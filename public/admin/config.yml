@@ -44,6 +44,44 @@ collections:
         name: "good_to_know_three"
         widget: "markdown"
         required: false
+  - name: "english"
+    label: "english"
+    folder: "content/english/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "index"
+    identifier_field: slug
+    summary: "english"
+    fields:
+      - label: "snabb info 1"
+        name: "snabb_info_one"
+        widget: "markdown"
+        required: false
+      - label: "snabb info 2"
+        name: "snabb_info_two"
+        widget: "markdown"
+        required: false
+      - label: "info"
+        name: "info"
+        widget: "markdown"
+        required: false
+      - label: "sale info"
+        name: "sale"
+        widget: "markdown"
+        required: false
+      - label: "Bra att veta 1"
+        name: "good_to_know_one"
+        widget: "markdown"
+        required: false
+      - label: "Bra att veta 2"
+        name: "good_to_know_two"
+        widget: "markdown"
+        required: false
+      - label: "Bra att veta 3"
+        name: "good_to_know_three"
+        widget: "markdown"
+        required: false
 
   - name: "konserter"
     label: "Konserter"

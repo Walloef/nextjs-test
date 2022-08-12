@@ -7,6 +7,7 @@ import MobileNavigation from "./MobileNavigation";
 export default function Navigation() {
   const { pathname } = useRouter();
   const [active, setActive] = useState(false);
+  const w = typeof window !== "undefined";
   return (
     <>
       {active && <MobileNavigation />}
@@ -21,6 +22,23 @@ export default function Navigation() {
             </Link>
           </li>
           <li className="spacer"></li>
+          {w && location.pathname === "/" ? (
+            <li className="desktop-menu">
+              <Link href="/english">
+                <a>
+                  <span>English</span>
+                </a>
+              </Link>
+            </li>
+          ) : (
+            <li className="desktop-menu">
+              <Link href="/">
+                <a>
+                  <span>Svenska</span>
+                </a>
+              </Link>
+            </li>
+          )}
           <li className="desktop-menu">
             <Link href="/meny">
               <a className={pathname.startsWith("/meny") ? "active" : null}>

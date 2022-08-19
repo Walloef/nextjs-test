@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 
 export default function MobileNavigation() {
   const { pathname } = useRouter();
+  const w = typeof window !== "undefined";
+
   return (
     <div className="mobile-menu">
       <style jsx>
@@ -61,6 +63,23 @@ export default function MobileNavigation() {
             </a>
           </Link>
         </li>
+        {w && location.pathname === "/" ? (
+          <li className="desktop-menu">
+            <Link href="/english">
+              <a>
+                <span>English</span>
+              </a>
+            </Link>
+          </li>
+        ) : (
+          <li className="desktop-menu">
+            <Link href="/">
+              <a>
+                <span>Svenska</span>
+              </a>
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );

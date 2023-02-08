@@ -16,6 +16,11 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
             alt="Instrument på ett bord i resturangen"
           />
           <div className="slogan">
+            <img
+              src="/images/best-club.png"
+              className="reward"
+              alt="Restaurang guru best club award 2023"
+            />
             <h1>Glenn Miller Café</h1>
             <p>Stockholms största och minsta jazzclub</p>
           </div>
@@ -122,6 +127,20 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
             max-width: calc(100% - 32px);
             margin: 0 auto 35px;
           }
+          .reward {
+            width: 20vw;
+            min-width: 150px;
+            max-width: 245px;
+            position: absolute;
+            right: -11px;
+            top: 0;
+            transform: translateY(-100%);
+          }
+          @media (max-width: 850px) {
+            .reward {
+              right: 0;
+            }
+          }
           .iframe__wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -200,7 +219,7 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
           }
           @media (min-width: 500px) {
             h1 {
-              font-size: 6vw;
+              font-size: clamp(18px, 7vw, 100px);
             }
           }
           .image-wrapper {

@@ -200,7 +200,7 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
           }
           @media (min-width: 500px) {
             h1 {
-              font-size: 6vw;
+              font-size: clamp(18px, 7vw, 100px);
             }
           }
           .image-wrapper {

@@ -4,6 +4,7 @@ import yaml from "js-yaml";
 import path from "path";
 import marked from "marked";
 import Layout from "../components/Layout";
+import { Award } from "../components/Award";
 
 export default function Index({ frontMatter }: { [key: string]: any }) {
   return (
@@ -16,16 +17,13 @@ export default function Index({ frontMatter }: { [key: string]: any }) {
             alt="Instrument på ett bord i resturangen"
           />
           <div className="slogan">
-            <img
-              src="/images/best-club.png"
-              className="reward"
-              alt="Restaurang guru best club award 2023"
-            />
+            <Award />
+
             <h1>Glenn Miller Café</h1>
             <p>Stockholms största och minsta jazzclub</p>
           </div>
         </div>
-
+        <Award mobile />
         <div className="container">
           <div className="quick-info">
             <div className="quick-info-wrapper">
